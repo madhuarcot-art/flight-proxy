@@ -1,12 +1,17 @@
 const express = require("express");
-const cors = require("cors");
 const fetch = require("node-fetch");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Allow requests from anywhere (your Claude artifact)
-app.use(cors());
+// Manual CORS — allow all origins explicitly
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization, Origin, Accept");
+  if (req.method === "OPTIONS") return res.sendStatus(200);
+  next();
+});
 
 // Health check
 app.get("/", (req, res) => {
@@ -14,7 +19,6 @@ app.get("/", (req, res) => {
 });
 
 // One-way flight search
-// GET /oneway?origin=LHR&destination=HKG&date=2026-05-01&adults=1&cabin=Economy&currency=GBP
 app.get("/oneway", async (req, res) => {
   const { origin, destination, date, adults = "1", cabin = "Economy", currency = "GBP" } = req.query;
   const API_KEY = process.env.FLIGHT_API_KEY;
