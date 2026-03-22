@@ -234,8 +234,8 @@ button{cursor:pointer;border:none;outline:none;transition:all .15s}
 <script>
 const PROXY = '';  // same origin
 
-const BLOCKED_CARRIERS = new Set(['EK','EY','WY','GF','SV','RJ','ME','MS','PC','Emirates','Etihad','Oman Air','Gulf Air','Saudia','Saudi Arabian Airlines','Royal Jordanian','Middle East Airlines','EgyptAir','Pegasus Airlines']);
-const BLOCKED_AIRPORTS = new Set(['BGW','BSR','EBL','NJF','OSB','DAM','ALP','DEZ','KAC','SAH','ADE','HOD','KBL','HEA','KDH','TIP','BEN','SEB','KRT','PZU','DXB','AUH','SHJ','AAN','DOH','MCT','SLL','DQM','RUH','JED','DMM','MED','AMM','AQJ','BEY','TLV','CAI','THR','IKA','MHD','SYZ']);
+const BLOCKED_CARRIERS = new Set(['EK','EY','QR','GF','WY','SV','RJ','ME','Emirates','Etihad Airways','Qatar Airways','Gulf Air','Oman Air','Saudia','Saudi Arabian Airlines','Royal Jordanian','Middle East Airlines','flydubai','Air Arabia']);
+const BLOCKED_AIRPORTS = new Set(['DXB','AUH','SHJ','AAN','FJR',  'DOH','BAH','KWI',  'TLV','BEY',  'THR','IKA','MHD','SYZ','AWZ',  'BGW','BSR','EBL','NJF','OSB',  'DAM','ALP','DEZ','KAC',  'SAH','ADE','HOD',  'KBL','HEA','KDH',  'TIP','BEN','SEB',  'KRT','PZU',  'AMM','AQJ']);
 
 const AIRPORTS = [
   ['LHR','London Heathrow'],['LGW','London Gatwick'],['STN','London Stansted'],
